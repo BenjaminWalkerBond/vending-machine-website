@@ -1,0 +1,33 @@
+.footer-section {
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 2rem 2rem 1rem 2rem;
+  text-align: center;
+}
+.footer-contact {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.footer-contact div {
+  min-width: 220px;
+  font-size: 1rem;
+}
+.footer-links {
+  margin-bottom: 1rem;
+}
+.footer-links a {
+  color: var(--color-primary);
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-weight: 500;
+}
+.footer-links a:hover {
+  color: var(--color-accent);
+}
+.footer-copyright {
+  font-size: 0.95rem;
+  color: #bbb;
+}

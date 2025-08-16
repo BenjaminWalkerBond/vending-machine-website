@@ -1,0 +1,119 @@
+.vending-popout-section {
+  position: relative;
+  background: #f9faf8;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0, 200, 255, 0.08);
+  padding: 2rem 1rem 3.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  max-width: 1300px;
+  margin: 2rem auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+.vending-popout-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 1;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.vending-popout-left, .vending-popout-center, .vending-popout-right {
+  flex: 1 1 0;
+  padding: 0 2rem;
+  text-align: left;
+  min-width: 0;
+  max-width: 400px;
+}
+.vending-popout-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #23413a;
+  word-break: break-word;
+}
+.vending-popout-desc {
+  margin-bottom: 1.5rem;
+  color: #3c786e;
+  word-break: break-word;
+}
+.vending-popout-subtitle {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-gold);
+}
+.vending-popout-img {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(0, 200, 255, 0.15);
+  margin-bottom: 1.5rem;
+}
+.vending-popout-main-title {
+  font-weight: bold;
+  font-size: 2.2rem;
+  margin: 1rem 0 0.5rem 0;
+  color: #23413a;
+  word-break: break-word;
+}
+.wave-bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 0;
+  pointer-events: none;
+}
+@media (max-width: 1300px) {
+  .vending-popout-content {
+    max-width: 1000px;
+  }
+}
+@media (max-width: 900px) {
+  .vending-popout-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    max-width: 100%;
+  }
+  .vending-popout-left, .vending-popout-center, .vending-popout-right {
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+  }
+  .vending-popout-img {
+    max-width: 220px;
+    width: 100%;
+  }
+  .vending-popout-title {
+    font-size: 1.2rem;
+  }
+  .vending-popout-main-title {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 600px) {
+  .vending-popout-section {
+    padding: 1rem 0.2rem 2rem 0.2rem;
+    border-radius: 0.7rem;
+  }
+  .vending-popout-img {
+    max-width: 140px;
+    width: 100%;
+  }
+  .vending-popout-title {
+    font-size: 1rem;
+  }
+  .vending-popout-main-title {
+    font-size: 1rem;
+  }
+}

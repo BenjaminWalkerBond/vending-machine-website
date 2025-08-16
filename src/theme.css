@@ -1,0 +1,13 @@
+/* src/theme.css
+   Theme colors derived from SanMarcosRiver.jpg (river blues, greens, sandy beige, natural tones)
+   Adjust as needed for best visual match. */
+:root {
+  --color-primary: #3a7ca5;      /* River blue */
+  --color-secondary: #6ec6ca;    /* Lighter aqua */
+  --color-accent: #b7c59c;       /* Riverbank green */
+  --color-background: #f4f1ee;   /* Sandy beige */
+  --color-surface: #e0e7ef;      /* Light blue-grey */
+  --color-text: #23313b;         /* Deep blue-grey */
+  --color-muted: #7a8b99;        /* Muted blue-grey */
+  --color-highlight: #e6d3b3;    /* Sunlit sand */
+}

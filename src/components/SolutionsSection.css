@@ -1,0 +1,85 @@
+:root {
+  --primary-color: #3c786e;
+  --accent-gold: #e6b347;
+}
+.solutions-section {
+  background: var(--color-background);
+  color: var(--color-text);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.solutions-section h2 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.solutions-title, .solutions-subtitle {
+  color: #23413a;
+}
+.solutions-desc {
+  color: #3c786e;
+}
+.solutions-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.solution-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-accent);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  color: var(--color-text);
+  min-width: 220px;
+  max-width: 260px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.solution-card:hover {
+  background: var(--color-highlight);
+}
+.solution-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+.solution-card p {
+  color: #444;
+}
+.solutions-note {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+.cta-button {
+  background: var(--accent-gold);
+  color: #1a1a1a;
+  border: none;
+  border-radius: 2rem;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: #c99a2c;
+  color: #fff;
+}
+@media (max-width: 600px) {
+  .solutions-section {
+    padding: 1.5rem 0.5rem;
+  }
+  .solutions-section h2 {
+    font-size: 1.2rem;
+  }
+  .solutions-cards {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .solution-card {
+    min-width: 0;
+    max-width: 100%;
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+  }
+}

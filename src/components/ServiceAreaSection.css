@@ -1,0 +1,40 @@
+.service-area-section {
+  background: #f7f7f7;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.service-area-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+}
+.service-area-images {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.service-area-images img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  min-width: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+@media (max-width: 600px) {
+  .service-area-section {
+    padding: 1.5rem 0.5rem;
+  }
+  .service-area-section h2 {
+    font-size: 1.2rem;
+  }
+  .service-area-images {
+    gap: 1rem;
+  }
+  .service-area-images img {
+    max-width: 140px;
+    min-width: 80px;
+  }
+}

@@ -1,0 +1,13 @@
+.partner-section {
+  background: var(--primary-color);
+  color: #1a1a1a;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+.partner-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.partner-section p {
+  font-size: 1.1rem;
+}

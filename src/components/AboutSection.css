@@ -1,0 +1,32 @@
+:root {
+  --primary-color: #3c786e; /* River blue-green */
+  --accent-gold: #e6b347; /* Warm gold accent */
+}
+.hero-section {
+  background: linear-gradient(180deg, var(--color-primary) 60%, var(--color-surface) 100%);
+  color: var(--color-text);
+  padding: 4rem 2rem 3rem 2rem;
+  text-align: center;
+}
+.hero-section h1, .hero-section h2 {
+  color: var(--color-background);
+}
+.hero-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+.cta-button {
+  background: var(--color-accent);
+  color: var(--color-text);
+  border: none;
+  border-radius: 2rem;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+.cta-button:hover {
+  background: var(--color-highlight);
+  color: #fff;
+}
+.hero-title, .hero-subtitle {
+  color: var(--primary-color);
+}

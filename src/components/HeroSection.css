@@ -1,0 +1,24 @@
+:root {
+  --primary-color: #3c786e; /* River blue-green */
+  --accent-gold: #e6b347; /* Warm gold accent */
+}
+.main-hero-section {
+  color: var(--color-text);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.main-hero-section h2 {
+  color: var(--color-text);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.main-hero-section p {
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
+.main-hero-section .muted, .main-hero-section small {
+  color: var(--color-muted);
+}
+.main-hero-section .highlight {
+  color: var(--color-highlight);
+}
