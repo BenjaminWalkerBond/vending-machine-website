@@ -14,7 +14,7 @@ function App() {
       <NavigationBar />
       <HeroSection />
       <AboutSection />
-      <ServiceAreaSection />
+      {/* <ServiceAreaSection /> */}
       <SolutionsSection />
       <PartnerSection />
       <ContactFormSection />

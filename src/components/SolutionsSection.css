@@ -54,8 +54,8 @@
   margin-bottom: 1.5rem;
 }
 .cta-button {
-  background: var(--accent-gold);
-  color: #1a1a1a;
+  background: var(--color-primary);
+  color: #fff;
   border: none;
   border-radius: 2rem;
   font-weight: bold;

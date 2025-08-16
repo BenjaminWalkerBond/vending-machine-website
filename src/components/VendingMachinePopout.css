@@ -2,7 +2,7 @@
   position: relative;
   background: #f9faf8;
   border-radius: 1.5rem;
-  box-shadow: 0 4px 24px rgba(0, 200, 255, 0.08);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.28), 0 4px 16px rgba(0,0,0,0.18);
   padding: 2rem 1rem 3.5rem 1rem;
   display: flex;
   flex-direction: column;
@@ -42,17 +42,17 @@
   color: #3c786e;
   word-break: break-word;
 }
-.vending-popout-subtitle {
+.vending-popout-subtitle h2{
   font-weight: bold;
-  font-size: 1.1rem;
+  color: var(--color-text);
   margin-bottom: 0.5rem;
-  color: var(--accent-gold);
+  text-align: center;
 }
 .vending-popout-img {
   max-width: 320px;
   width: 100%;
   border-radius: 1rem;
-  box-shadow: 0 2px 16px rgba(0, 200, 255, 0.15);
+  /* box-shadow: 0 2px 16px rgba(0, 200, 255, 0.15); */
   margin-bottom: 1.5rem;
 }
 .vending-popout-main-title {
@@ -70,6 +70,22 @@
   height: 120px;
   z-index: 0;
   pointer-events: none;
+}
+.vending-feature-box {
+  background: #fff;
+  border-radius: 1.1rem;
+  box-shadow: 0 6px 32px rgba(44,62,80,0.13), 0 2px 8px rgba(44,62,80,0.08);
+  padding: 1.2rem 1.1rem;
+  margin-bottom: 1.2rem;
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(60,120,110,0.08);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.vending-feature-box:hover {
+  box-shadow: 0 12px 40px rgba(44,62,80,0.18), 0 4px 16px rgba(44,62,80,0.12);
+  border-color: rgba(60,120,110,0.18);
 }
 @media (max-width: 1300px) {
   .vending-popout-content {
@@ -89,16 +105,27 @@
     text-align: center;
     width: 100%;
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
   }
   .vending-popout-img {
-    max-width: 220px;
+    max-width: 320px;
     width: 100%;
+    height: auto;
+    margin-bottom: 16px;
   }
   .vending-popout-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .vending-popout-main-title {
-    font-size: 1.3rem;
+    display: none;
+  }
+  .vending-feature-box {
+    max-width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem 0.5rem;
   }
 }
 @media (max-width: 600px) {
@@ -106,14 +133,34 @@
     padding: 1rem 0.2rem 2rem 0.2rem;
     border-radius: 0.7rem;
   }
-  .vending-popout-img {
-    max-width: 140px;
+  .vending-popout-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .vending-popout-left,
+  .vending-popout-right {
     width: 100%;
+    margin: 0 0 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .vending-popout-center {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .vending-popout-img {
+    max-width: 80vw;
+    height: auto;
+    margin-bottom: 16px;
   }
   .vending-popout-title {
     font-size: 1rem;
   }
   .vending-popout-main-title {
-    font-size: 1rem;
+    display: none;
   }
 }

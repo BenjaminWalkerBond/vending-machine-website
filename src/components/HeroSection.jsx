@@ -1,14 +1,37 @@
 import BackgroundImageWrapper from './BackgroundImageWrapper';
 import './HeroSection.css';
 
+const panels = [
+  { text: 'Modern' },
+  { text: 'Smart Cooler' },
+  { text: 'Amenities' }
+];
+
 function HeroSection() {
   return (
-    <BackgroundImageWrapper>
-      <section className="hero-section">
-        <h1>Modern AI Vending Machine Amenities</h1>
-        <h2>Make Money During Breaktime With Vending Machines</h2>
-        <p>Tributary Market Vending approaches each new business opportunity in an individualized manner. We manage corporate headquarters, large and small businesses, hospitals, and educational institutions with ease.</p>
-        <a className="cta-button" href="#service">View Vending Service</a>
+    <BackgroundImageWrapper pixelated>
+      <section className="hero-section pixel-bg">
+        <div className="hero-panels-row">
+          <div className="hero-panel responsive-panel">
+            <span className="pixel-text flicker flicker-delay-0 responsive-text">
+              Modern Smart Cooler Amenities
+            </span>
+          </div>
+          {/* Panels for wide screens only */}
+          {panels.map((panel, idx) => (
+            <div
+              key={panel.text}
+              className={`hero-panel wide-panel`}
+              style={{ zIndex: idx }}
+            >
+              <span
+                className={`pixel-text flicker flicker-delay-${idx}`}
+              >
+                {panel.text}
+              </span>
+            </div>
+          ))}
+        </div>
       </section>
     </BackgroundImageWrapper>
   );

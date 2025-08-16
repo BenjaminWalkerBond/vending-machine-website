@@ -4,13 +4,16 @@
   align-items: center;
   background: var(--color-primary);
   color: var(--color-background);
-  padding: 1rem 2rem;
+  padding: 0.6rem 1.2rem;
   width: 100%;
   box-sizing: border-box;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 56px;
 }
 .nav-logo {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 .nav-toggle {
@@ -57,9 +60,13 @@
     gap: 0;
     max-height: 0;
     overflow: hidden;
-    width: 100vw;
+    width: 100%; /* Changed from 100vw to 100% to prevent horizontal scroll */
     box-sizing: border-box;
     z-index: 100;
+    padding: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: max-height 0.3s, padding 0.3s, border-radius 0.3s;
   }
   .nav-links.open {
     max-height: 400px;

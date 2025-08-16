@@ -4,6 +4,7 @@ import './BackgroundImageWrapper.css';
 const BackgroundImageWrapper = ({ children }) => (
   <div className="background-image-wrapper">
     <div className="background-image" />
+    <div className="background-image-overlay" />
     <div className="background-content">
       {children}
     </div>

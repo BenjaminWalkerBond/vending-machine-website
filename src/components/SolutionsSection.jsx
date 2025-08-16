@@ -1,10 +1,13 @@
 import BackgroundImageWrapper from './BackgroundImageWrapper';
+import { useFadeInOnScroll } from '../utils/useFadeInOnScroll';
 import './SolutionsSection.css';
+import { handleButtonClick } from '../utils/buttonHandlers';
 
 function SolutionsSection() {
+  const fadeRef = useFadeInOnScroll();
   return (
     <BackgroundImageWrapper>
-      <section className="solutions-section" id="machines">
+      <section className="solutions-section" id="machines" ref={fadeRef}>
         <h2>Vending Solutions to Help Your Business Grow</h2>
         <div className="solutions-cards">
           <div className="solution-card">
@@ -25,7 +28,7 @@ function SolutionsSection() {
           </div>
         </div>
         <p className="solutions-note">Proudly serving, New Jersey, Eastern Pennsylvania and Southern Florida with over 6000 Vending Machines in the East Coast!</p>
-        <a className="cta-button" href="#about">Learn More About Us</a>
+        <a className="cta-button" href="#about" onClick={handleButtonClick}>Learn More About Us</a>
       </section>
     </BackgroundImageWrapper>
   );
