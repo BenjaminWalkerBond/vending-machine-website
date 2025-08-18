@@ -2,13 +2,13 @@ import './FooterSection.css';
 
 function FooterSection() {
   return (
-    <footer className="footer-section">
+    <div className="footer-background">
+      <footer className="footer-section">
       <div className="footer-contact">
         <div>
           <strong>Tributary Market Vending Inc.</strong><br />
-          109 Park Ln, San Marcos, TX 78666<br />
           Tel: (800) 488-7555<br />
-          Email: info@tributarymarketvending.com
+          Email: info@tributarymarketsmartcoolers.com
         </div>
       </div>
       <div className="footer-links">
@@ -17,9 +17,11 @@ function FooterSection() {
         <a href="#about">About</a> |
       </div>
       <div className="footer-copyright">
-        Copyright © 2025 CVV | Powered by Tech 2 Success
+        Copyright © 2025 Tributary Market LLC
       </div>
     </footer>
+    </div>
+    
   );
 }
 

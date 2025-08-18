@@ -1,9 +1,18 @@
+.footer-background {
+  background: var(--color-background);
+  border-top: 1px solid rgba(60, 120, 110, 0.15); /* much softer, less distinct border */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .footer-section {
   background: var(--color-surface);
   color: var(--color-text);
   padding: 2rem 2rem 1rem 2rem;
   text-align: center;
 }
+
 .footer-contact {
   display: flex;
   justify-content: center;

@@ -1,35 +1,60 @@
-# React + Vite
+# Tributary Market Vending Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive React + Vite web app for a vending machine business, designed to closely match the homepage layout of [culinaryvending.com](https://www.culinaryvending.com/) with custom branding, assets, and content.
 
-Currently, two official plugins are available:
+## Features
+- Clean, modern layout with sticky navbar and clear branding
+- Pixelated hero section with animated text panels
+- Vending machine popout section with boxed features and central image
+- Responsive design for desktop, tablet, and mobile
+- Custom assets and color theme
+- Modular React components for easy maintenance
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Structure
+```
+public/           # Static assets
+src/
+  assets/         # Images and graphics
+  components/     # Modular React components (HeroSection, NavigationBar, etc.)
+  utils/          # Custom hooks and utility functions
+  App.jsx         # Main app component
+  main.jsx        # Entry point
+  theme.css       # Custom theme variables
+```
 
-## Expanding the ESLint configuration
+## Getting Started
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+3. **View the site:**
+   Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Customization
+- Update images in `src/assets/` and `public/` for your brand
+- Edit colors and theme in `src/theme.css`
+- Modify content and layout in `src/components/`
 
+## Responsive Design
+- Hero section adapts for mobile, desktop, and ultra-wide screens
+- Panels merge or stack based on screen size for optimal readability
 
-Rating: 7/10
+## Areas for Improvement
+- Refine header spacing for better visual balance
+- Enhance background image contrast or add overlay
+- Add more contrast/shadow to feature boxes
+- Improve typography hierarchy
+- Make call-to-action button larger and more distinct
+- Add subtle animations for polish
+- Expand footer content for more visual interest
 
-Strengths:
+## License
+MIT
 
-Clean, modern layout with good use of whitespace.
-Sticky navbar and clear branding.
-Hero section is prominent and easy to read.
-Vending machine popout section is visually appealing, with boxed features and a central image.
-Responsive design works well on desktop and mobile.
-Custom assets and colors match your brand.
-Areas for Improvement:
+---
 
-The header area above the hero section is quite tall and could be tightened for better visual balance.
-The background image is attractive but a bit washed out; consider increasing contrast or adding a subtle overlay for more depth.
-The boxed features could use slightly more contrast or shadow for extra "pop" (like the reference site).
-Typography could be refined—try adjusting font sizes and weights for hierarchy, especially in feature boxes.
-The call-to-action button could be larger and more visually distinct.
-Consider adding subtle animations (fade-in, hover effects) for more polish.
-Footer and lower sections could use more visual interest or content.
-Summary:
-Your landing page is clean, professional, and easy to navigate. With a few tweaks to spacing, contrast, and typography, you can push it closer to a 9 or 10 and match the reference site even more closely. Great progress!
+*Built with React, Vite, and love for modern web design.*

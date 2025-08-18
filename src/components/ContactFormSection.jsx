@@ -7,7 +7,7 @@ function ContactFormSection() {
   return (
     <BackgroundImageWrapper>
       <section className="contact-form-section" id="request" ref={fadeRef}>
-        <h2>How May We Assist You?</h2>
+        <h2>Contact Us</h2>
         <form className="contact-form">
           <input type="text" placeholder="First Name" name="firstName" />
           <input type="text" placeholder="Last Name" name="lastName" />
