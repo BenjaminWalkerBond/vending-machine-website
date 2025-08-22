@@ -30,11 +30,16 @@ jobs:
             git config --global user.email "${{ github.actor }}@users.noreply.github.com"
             git fetch origin gh-pages || true
             git switch --orphan gh-pages
+            # Clean working directory (except .git)
+            find . -mindepth 1 -not -name '.git' -exec rm -rf {} + 2>/dev/null
+            # Copy dist contents to root
             cp -r dist/* .
+            # Create .nojekyll file to prevent Jekyll processing
+            touch .nojekyll
             git add .
             if git diff --cached --quiet; then
-            echo "Nothing to commit"
+              echo "Nothing to commit"
             else
-            git commit -m "Deploy to GitHub Pages"
-            git push --force origin gh-pages
+              git commit -m "Deploy to GitHub Pages"
+              git push --force origin gh-pages
             fi
