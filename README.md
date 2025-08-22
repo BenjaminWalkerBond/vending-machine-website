@@ -1,5 +1,7 @@
 # Tributary Market Vending Website
 
+[![Deploy to GitHub Pages](https://github.com/BenjaminWalkerBond/vending-machine-website/actions/workflows/deploy.yml/badge.svg)](https://github.com/BenjaminWalkerBond/vending-machine-website/actions/workflows/deploy.yml)
+
 A modern, responsive React + Vite web app for a vending machine business, designed to closely match the homepage layout of [culinaryvending.com](https://www.culinaryvending.com/) with custom branding, assets, and content.
 
 ## Features
