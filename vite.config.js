@@ -10,5 +10,4 @@ export default defineConfig({
       interval: 100,
     },
   },
-  base: '/vending-machine-website/',
 })
