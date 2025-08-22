@@ -1,4 +1,5 @@
 import './FooterSection.css';
+import { handleButtonClick } from '../utils/buttonHandlers';
 
 function FooterSection() {
   return (
@@ -12,9 +13,9 @@ function FooterSection() {
         </div>
       </div>
       <div className="footer-links">
-        <a href="#service">Vending Service</a> |
-        <a href="#machines">Machines We Carry</a> |
-        <a href="#about">About</a> |
+        <a href="#about" onClick={handleButtonClick}>Vending Service</a> |
+        <a href="#machines" onClick={handleButtonClick}>Machines We Carry</a> |
+        <a href="#about" onClick={handleButtonClick}>About</a> |
       </div>
       <div className="footer-copyright">
         Copyright © 2025 Tributary Market LLC

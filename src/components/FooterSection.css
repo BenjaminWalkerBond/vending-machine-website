@@ -1,14 +1,13 @@
 .footer-background {
-  background: var(--color-background);
-  border-top: 1px solid rgba(60, 120, 110, 0.15); /* much softer, less distinct border */
+  background: var(--color-primary);
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
 .footer-section {
-  background: var(--color-surface);
-  color: var(--color-text);
+  background: var(--color-primary);
+  color: white;
   padding: 2rem 2rem 1rem 2rem;
   text-align: center;
 }
@@ -28,15 +27,15 @@
   margin-bottom: 1rem;
 }
 .footer-links a {
-  color: var(--color-primary);
+  color: white;
   text-decoration: none;
   margin: 0 0.5rem;
   font-weight: 500;
 }
 .footer-links a:hover {
-  color: var(--color-accent);
+  color: var(--color-highlight);
 }
 .footer-copyright {
   font-size: 0.95rem;
-  color: #bbb;
+  color: rgba(255, 255, 255, 0.8);
 }

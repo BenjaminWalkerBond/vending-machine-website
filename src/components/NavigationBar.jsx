@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './NavigationBar.css';
+import { handleButtonClick } from '../utils/buttonHandlers';
 
 function NavigationBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,7 +12,7 @@ function NavigationBar() {
         ☰
       </button>
       <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
-        <li><a href="#service">Services</a></li>
+        <li><a href="#about">Services</a></li>
         <li><a href="#machines">Machines We Carry</a></li>
         <li><a href="#about">About</a></li>
       </ul>
