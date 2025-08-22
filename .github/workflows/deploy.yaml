@@ -31,7 +31,7 @@ jobs:
             git fetch origin gh-pages || true
             git switch --orphan gh-pages
             # Copy all files (including hidden ones) from dist
-            cp -r dist/* dist/.[!.]* .
+            cp -r dist/* .
             git add .
             if git diff --cached --quiet; then
             echo "Nothing to commit"
