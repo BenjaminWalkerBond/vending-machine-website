@@ -30,7 +30,7 @@ jobs:
             git config --global user.email "${{ github.actor }}@users.noreply.github.com"
             git fetch --depth=1 origin gh-pages || true
             git switch --orphan gh-pages
-            git rm -rf .
+            git rm -rf --cached .
             cp -r dist/* .
             git add .
             git commit -m "Deploy to GitHub Pages"
