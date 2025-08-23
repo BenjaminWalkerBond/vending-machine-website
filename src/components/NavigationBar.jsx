@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './NavigationBar.css';
-import { handleButtonClick } from '../utils/buttonHandlers';
 
 function NavigationBar() {
   const [menuOpen, setMenuOpen] = useState(false);
