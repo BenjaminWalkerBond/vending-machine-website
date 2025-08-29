@@ -12,6 +12,13 @@ body {
   width: 100vw;
   max-width: none;
   text-align: center;
+  position: relative;
+}
+
+.app-wrapper {
+  position: relative;
+  overflow-x: hidden;
+  padding-top: 56px; /* Add padding equal to navbar height */
 }
 
 .logo {

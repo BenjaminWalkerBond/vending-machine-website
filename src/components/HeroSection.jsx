@@ -7,7 +7,7 @@ console.log('HeroSection component file loaded');
 
 const panels = [
   { text: 'Modern' },
-  { text: 'Smart Cooler' },
+  { text: 'Smart Cooler', isMiddle: true, words: ['Smart', 'Cooler'] },
   { text: 'Amenities' }
 ];
 
@@ -94,28 +94,47 @@ function HeroSection() {
   return (
     <BackgroundImageWrapper pixelated>
       <section className="hero-section pixel-bg">
-        <div className="hero-panels-row">
+        <div className="hero-panels-row horizontal">
+          {/* Side-by-side panels for all screens */}
+          {panels.map((panel, idx) => (
+            <div
+              key={panel.text}
+              className={`hero-panel side-by-side-panel baseline-fix
+                ${idx === 1 ? 'middle-panel' : ''} 
+                ${idx === 0 ? 'first-panel' : ''}
+                ${idx === panels.length - 1 ? 'last-panel' : ''}
+              `}
+              style={{ zIndex: idx }}
+            >
+              {panel.isMiddle ? (
+                <span
+                  className={`pixel-text flicker flicker-delay-${idx} ${flickeringPanel === idx ? 'random-flicker' : ''} middle-text`}
+                >
+                  {panel.words.map((word, wordIdx) => (
+                    <span key={wordIdx} className="stacked-word">{word}</span>
+                  ))}
+                </span>
+              ) : (
+                <span
+                  className={`pixel-text flicker flicker-delay-${idx} ${flickeringPanel === idx ? 'random-flicker' : ''}`}
+                >
+                  {panel.text}
+                </span>
+              )}
+            </div>
+          ))}
+          
+          {/* Fallback for very small screens */}
           <div className="hero-panel responsive-panel">
             <span 
               className={`pixel-text flicker flicker-delay-0 responsive-text ${flickeringPanel === 'responsive' ? 'random-flicker' : ''}`}
             >
-              Modern Smart Cooler Amenities
+              <span className="stacked-word">Modern</span>
+              <span className="stacked-word">Smart</span>
+              <span className="stacked-word">Cooler</span>
+              <span className="stacked-word">Amenities</span>
             </span>
           </div>
-          {/* Panels for wide screens only */}
-          {panels.map((panel, idx) => (
-            <div
-              key={panel.text}
-              className={`hero-panel wide-panel`}
-              style={{ zIndex: idx }}
-            >
-              <span
-                className={`pixel-text flicker flicker-delay-${idx} ${flickeringPanel === idx ? 'random-flicker' : ''}`}
-              >
-                {panel.text}
-              </span>
-            </div>
-          ))}
         </div>
       </section>
     </BackgroundImageWrapper>

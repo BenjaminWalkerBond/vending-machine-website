@@ -1,0 +1,14 @@
+/* Custom font declarations */
+@font-face {
+  font-family: 'Karmatic Arcade';
+  src: url('./karmatic-arcade.ttf') format('truetype');
+  /* If you have other font formats, add them here:
+  src: 
+    url('../fonts/karmatic-arcade.woff2') format('woff2'),
+    url('../fonts/karmatic-arcade.woff') format('woff'),
+    url('../fonts/karmatic-arcade.ttf') format('truetype');
+  */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Ensures text remains visible during font loading */
+}
