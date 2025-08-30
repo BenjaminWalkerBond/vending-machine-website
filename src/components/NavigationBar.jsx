@@ -32,7 +32,7 @@ function NavigationBar() {
       <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
         <li><a href="#about">Services</a></li>
         <li><a href="#machines">Machines We Carry</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
     </nav>
   );

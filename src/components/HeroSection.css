@@ -9,14 +9,21 @@
   
   /* Scaling factors for different screen sizes */
   --hero-text-scale-desktop: 1.00; /* 1440p and above */
-  --hero-text-scale-laptop: 0.8;     /* 1024px to 1439px */
-  --hero-text-scale-tablet: 0.8;   /* 768px to 1023px */
-  --hero-text-scale-mobile: 0.65;  /* Below 768px */
+  --hero-text-scale-laptop: 0.7;     /* 1024px to 1439px */
+  --hero-text-scale-tablet: 0.55;   /* 768px to 1023px */
+  --hero-text-scale-mobile: 0.45;  /* Below 768px */
   --hero-text-scale-small-mobile: 0.45; /* Below 480px */
   --hero-text-tiny-mobile: 0.35;   /* Below 420px */
   
   /* Middle text proportion relative to main text */
   --middle-text-proportion: 0.95;
+  
+  /* Padding scale factors for responsive design */
+  --hero-padding-top-base: 2rem;
+  --hero-padding-top-tablet: 2.5rem; /* 768px and below */
+  --hero-padding-top-mobile: 3.5rem; /* 480px and below */
+  --hero-padding-top-small-mobile: 5rem; /* 420px and below */
+  --hero-padding-top-expanded-nav: 7rem; /* When navbar is expanded (425px and below) */
   
   /* Calculated font sizes - these will be overridden in media queries */
   --hero-text-size: calc(var(--hero-text-base-size) * var(--hero-text-scale-laptop));
@@ -70,7 +77,7 @@
 }
 
 .hero-section.pixel-bg {
-  padding:0;
+  padding: var(--hero-padding-top-base) 0;
   width: 100%;
   min-height: 24vh;
   height: 24vh;
@@ -166,6 +173,8 @@
   position: relative; /* Ensure it can be positioned correctly */
   z-index: 2; /* Higher z-index to ensure visibility */
   justify-self: center; /* Center in its grid column */
+  min-height: min-content; /* Ensure it has at least the height of its content */
+  height: auto; /* Allow height to adjust to content */
 }
 .hero-panel.show {
   display: flex;
@@ -189,6 +198,8 @@
   justify-content: center; /* Center horizontally */
   margin: 0;
   padding: 0;
+  min-height: min-content; /* Ensure it has at least the height of its content */
+  height: auto; /* Allow height to adjust based on content */
 }
 
 /* Helper class to ensure text alignment */
@@ -282,12 +293,34 @@
   display: flex;
 }
 
+.pixel-text.responsive-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  font-size: calc(var(--hero-text-base-size) * 0.5);
+}
+
+.pixel-text.responsive-text .stacked-word {
+  display: block;
+  line-height: 1.2;
+  margin: 0.1em 0;
+  padding: 0;
+  white-space: nowrap;
+  text-shadow: 0 0 3px #fff, 0 0 10px #00bcd4;
+}
+
+/* ----------------- RESPONSIVE BREAKPOINTS ------------------ */
+
 /* Large screens - Desktop */
 @media (min-width: 1440px) {
   :root {
     --hero-text-size: calc(var(--hero-text-base-size) * var(--hero-text-scale-desktop));
     --hero-text-middle-size: calc(var(--hero-text-size) * 0.95);
   }
+  
   .hero-panel.middle-panel {
     padding: 0 1.5rem; /* More padding on larger screens */
   }
@@ -309,107 +342,162 @@
   }
 }
 
-/* Small screens - Mobile */
+/* MOBILE BREAKPOINTS - STACKED LAYOUT */
+
+/* All mobile screens - Base mobile styles */
 @media (max-width: 767px) {
   :root {
     --hero-text-size: calc(var(--hero-text-base-size) * var(--hero-text-scale-mobile));
     --hero-text-middle-size: calc(var(--hero-text-size) * 0.95);
   }
+  
+  /* On mobile, hide the individual panels */
+  .hero-panel.side-by-side-panel {
+    display: none;
+  }
+  
+  /* Show the responsive panel with all text stacked vertically */
+  .hero-panel.responsive-panel {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+  }
+  
+  /* Hero section adjustments */
+  .hero-section.pixel-bg {
+    padding: var(--hero-padding-top-tablet) 0 1.5rem 0;
+    min-height: auto;
+    height: auto;
+  }
+  
+  .hero-panels-row.horizontal {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Text adjustments for mobile */
+  .pixel-text {
+    white-space: normal;
+    word-break: break-word;
+    position: relative;
+    z-index: 5;
+  }
+  
+  /* Specific styling for the responsive text that's stacked vertically */
+  .pixel-text.responsive-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: calc(var(--hero-text-base-size) * 0.5);
+    line-height: 1.2;
+  }
+  
+  .pixel-text.responsive-text .stacked-word {
+    margin: 0.1em 0;
+    padding: 0;
+  }
 }
 
-@media (max-width: 700px) {
-  .hero-section.pixel-bg,
-  .hero-panels-row {
-    min-height: 15vh;
-    height: 15vh;
-  }
-  .hero-panel {
-    min-width: 0;
-  }
-  .hero-panel.middle-panel {
-    padding: 0 0.7rem; /* Less padding on smaller screens */
-  }
-}
-
+/* Medium-small screens - Larger mobile */
 @media (max-width: 580px) {
   .hero-panel.middle-panel {
-    padding: 0 0.5rem; /* Even less padding on very small screens */
+    padding: 0 0.5rem;
   }
 }
 
+/* Small mobile screens */
 @media (max-width: 480px) {
   :root {
     --hero-text-size: calc(var(--hero-text-base-size) * var(--hero-text-scale-small-mobile));
     --hero-text-middle-size: calc(var(--hero-text-size) * 0.95);
   }
+  
+  .hero-section.pixel-bg {
+    padding-top: var(--hero-padding-top-mobile);
+    margin-top: 0;
+  }
+  
+  /* Adjust font size for the stacked text */
+  .pixel-text.responsive-text {
+    font-size: calc(var(--hero-text-base-size) * 0.45);
+  }
+  
+  /* Adjust spacing between words */
+  .pixel-text.responsive-text .stacked-word {
+    margin: 0.12em 0;
+  }
 }
 
-/* Very small screens - fallback to single line text */
+/* Very small mobile screens */
 @media (max-width: 420px) {
   :root {
     --hero-text-size: calc(var(--hero-text-base-size) * var(--hero-text-tiny-mobile));
     --hero-text-middle-size: calc(var(--hero-text-size) * var(--middle-text-proportion));
   }
   
-  .hero-panel.side-by-side-panel {
-    display: none;
+  .hero-section.pixel-bg {
+    padding-top: var(--hero-padding-top-small-mobile);
+    min-height: 160px;
   }
-  .hero-panel.responsive-panel {
-    display: flex;
-    padding: 0;
-  }
-  .pixel-text {
-    white-space: normal; /* Allow wrapping on very small screens */
-    word-break: break-word;
-  }
+  
+  /* Further reduce font size for very small screens */
   .pixel-text.responsive-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: var(--hero-text-size); /* Ensure responsive text uses our variable */
+    font-size: calc(var(--hero-text-base-size) * 0.4);
   }
+  
+  /* Tighten spacing for very small screens */
   .pixel-text.responsive-text .stacked-word {
-    display: block;
-    line-height: 1;
-    margin: 0;
-    padding: 0.05em 0;
+    margin: 0.08em 0;
+    line-height: 1.1;
   }
 }
 
-/* Media query adjustments for the grid layout */
-@media (max-width: 768px) {
+/* Expanded navbar breakpoint */
+@media (max-width: 425px) {
+  .hero-section.pixel-bg {
+    padding-top: var(--hero-padding-top-expanded-nav);
+    min-height: 220px;
+  }
+  
+  /* Ensure content is centered when navbar is expanded */
   .hero-panels-row.horizontal {
-    grid-template-columns: minmax(100px, 1fr) auto minmax(100px, 1fr);
+    padding-top: 10px;
+  }
+  
+  /* Adjust text sizing for this specific breakpoint */
+  .pixel-text.responsive-text {
+    font-size: calc(var(--hero-text-base-size) * 0.42);
   }
 }
 
-@media (max-width: 580px) {
-  .hero-panels-row.horizontal {
-    grid-template-columns: minmax(80px, 1fr) auto minmax(80px, 1fr);
-  }
-}
-
+/* Helper styles for panel positioning and text alignment */
 .hero-panel.first-panel .pixel-text,
 .hero-panel.last-panel .pixel-text {
-  /* Remove the relative positioning that's causing the misalignment */
   position: static;
   transform: none;
 }
 
 /* Fixed width container for the middle panel to ensure consistent layout */
 .hero-panel.middle-panel {
-  min-width: max-content; /* Ensure it takes up the space it needs */
-  align-self: center; /* Ensure vertical centering */
+  min-width: max-content;
+  align-self: center;
 }
 
 /* Ensure all panels have the same vertical alignment */
 .hero-panel {
   display: flex;
-  align-items: center; /* Center vertically */
+  align-items: center;
 }
 
 /* Set baseline alignment for text */
 .hero-panel .pixel-text {
-  display: inline-block; /* Makes baseline alignment work */
-  vertical-align: middle; /* Align to middle */
+  display: inline-block;
+  vertical-align: middle;
 }

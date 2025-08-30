@@ -6,7 +6,7 @@ function ContactFormSection() {
   const fadeRef = useFadeInOnScroll();
   return (
     <BackgroundImageWrapper>
-      <section className="contact-form-section" id="request" ref={fadeRef}>
+      <section className="contact-form-section" id="contact" ref={fadeRef}>
         <h2>Contact Us</h2>
         <form className="contact-form">
           <input type="text" placeholder="First Name" name="firstName" />

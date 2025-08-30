@@ -7,8 +7,8 @@ function PartnerSection() {
   return (
     <BackgroundImageWrapper>
       <section className="partner-section" ref={fadeRef}>
-        <h2>Partnered with Cantaloupe</h2>
-        <p>With micropayment processing, enterprise cloud software, IoT technology, and point of sale innovations, Cantaloupe empowers businesses of all sizes to provide self-service experiences for consumers.</p>
+        <h2>Does your business qualify?</h2>
+        <p> Contact us below to see if you business qualifies for on of our free smart coolers!</p>
       </section>
     </BackgroundImageWrapper>
   );
