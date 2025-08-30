@@ -39,3 +39,47 @@
   background: var(--color-accent);
   color: #fff;
 }
+
+/* Disabled state for submit button during submission */
+.contact-form button:disabled {
+  background: var(--color-primary);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Success message styling */
+.form-success-message {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.form-success-message h3 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.form-success-message p {
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+
+.reset-button {
+  background: var(--color-primary);
+  color: var(--color-background);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reset-button:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
