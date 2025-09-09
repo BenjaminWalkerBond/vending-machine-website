@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - main
+      - contractor
 
 jobs:
   deploy:
@@ -18,5 +18,5 @@ jobs:
 
       - name: Deploy to FTP
         run: |
-          chmod +x deploy.sh 
+          chmod +x deploy.sh
           ./deploy.sh ${{ secrets.FTP_HOST }} ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }} ./dist /home/tributar/public_html
