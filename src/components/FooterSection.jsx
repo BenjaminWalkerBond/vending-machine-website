@@ -1,29 +1,10 @@
-import './FooterSection.css';
-import { handleButtonClick } from '../utils/buttonHandlers';
-
-function FooterSection() {
+export default function FooterSection() {
   return (
-    <div className="footer-background">
-      <footer className="footer-section">
-      <div className="footer-contact">
-        <div>
-          <strong>Tributary Market Vending Inc.</strong><br />
-          Tel: (800) 488-7555<br />
-          Email: info@tributarymarketsmartcoolers.com
-        </div>
-      </div>
-      <div className="footer-links">
-        <a href="#about" onClick={handleButtonClick}>Vending Service</a> |
-        <a href="#machines" onClick={handleButtonClick}>Machines We Carry</a> |
-        <a href="#about" onClick={handleButtonClick}>About</a> |
-      </div>
-      <div className="footer-copyright">
-        Copyright © 2025 Tributary Market LLC
+    <footer className="section section--tight">
+      <div style={{display:'flex',flexWrap:'wrap',gap:16,justifyContent:'space-between',alignItems:'center'}}>
+        <p className="muted">© {new Date().getFullYear()} Tributary Market LLC • San Marcos, TX</p>
+        <a href="#top" className="link">Back to top ↑</a>
       </div>
     </footer>
-    </div>
-    
-  );
+  )
 }
-
-export default FooterSection;

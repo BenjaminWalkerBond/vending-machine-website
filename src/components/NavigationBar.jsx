@@ -1,41 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import './NavigationBar.css';
+import React from "react";
+import logo from "../assets/tributary_market_logo.png";
 
-function NavigationBar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  // Add scroll event listener to change navbar style when scrolled
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    
-    // Clean up the event listener
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
+export default function NavigationBar() {
   return (
-    <nav className={`navigation-bar${scrolled ? ' scrolled' : ''}`}>
-      <div className="nav-logo">Tributary Market Smart Coolers</div>
-      <button className="nav-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">
-        ☰
-      </button>
-      <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
-        <li><a href="#about">Services</a></li>
-        <li><a href="#machines">Machines We Carry</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
+    <nav className="navbar">
+      <div className="nav-inner">
+        <a href="#top" className="brand">
+          <img src={logo} alt="Tributary Market" className="brand-mark" />
+          <span className="brand-name">Tributary Market</span>
+        </a>
+
+        <div className="nav-links">
+          <a href="#services" className="nav-link">Services</a>
+          <a href="#solutions" className="nav-link">Features</a>
+          <a href="#contact" className="btn-cta-sm">Get Started</a>
+        </div>
+      </div>
     </nav>
   );
 }
-
-export default NavigationBar;

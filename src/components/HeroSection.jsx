@@ -1,144 +1,76 @@
-import { useState, useEffect, useRef } from 'react';
-import BackgroundImageWrapper from './BackgroundImageWrapper';
-import './HeroSection.css';
+import React from 'react';
+import coolerImg from '../assets/micromart_side_view_transparent.png';
 
-// Immediately log when the file is imported
-console.log('HeroSection component file loaded');
 
-const panels = [
-  { text: 'Modern' },
-  { text: 'Smart Cooler', isMiddle: true, words: ['Smart', 'Cooler'] },
-  { text: 'Amenities' }
-];
+const RiverIllustration = () => (
+  <svg
+    className="hero-illustration"
+    viewBox="0 0 800 400"
+    preserveAspectRatio="xMidYMid slice"
+    aria-hidden="true"
+  >
+   
+    <circle cx="550" cy="275" r="120" fill="#ffb773ff" opacity="1" />
 
-function HeroSection() {
-  console.log('HeroSection component rendering');
-  
-  // Use state to track which panel should be flickering
-  const [flickeringPanel, setFlickeringPanel] = useState(null);
-  // Use ref to track if we're in the middle of a flicker sequence
-  const isFlickeringRef = useRef(false);
-  
-  // Simple interval-based flickering with reduced frequency
-  useEffect(() => {
-    console.log('Setting up flickering effect');
-    
-    // Wait for initial animations to complete
-    const initialDelay = 3000;
-    
-    // Function to trigger a random flicker
-    const triggerRandomFlicker = () => {
-      // Don't start a new flicker if one is already in progress
-      if (isFlickeringRef.current) {
-        // Reschedule and try again later
-        const retryDelay = 2000;
-        setTimeout(triggerRandomFlicker, retryDelay);
-        return;
-      }
-      
-      // We're starting a flicker sequence
-      isFlickeringRef.current = true;
-      
-      // Options: 'responsive' or 0-2 for individual panels
-      const options = ['responsive', 0, 1, 2];
-      const randomIndex = Math.floor(Math.random() * options.length);
-      const selectedPanel = options[randomIndex];
-      
-      // Set the flickering panel
-      setFlickeringPanel(selectedPanel);
-      
-      // Clear after animation duration
-      setTimeout(() => {
-        // Check if we should trigger the next panel (50% chance)
-        const shouldTriggerNextPanel = Math.random() > 0.5;
-        
-        if (shouldTriggerNextPanel) {
-          // Determine the next panel in sequence
-          let nextPanel;
-          if (selectedPanel === 'responsive') {
-            nextPanel = 0;
-          } else if (selectedPanel === 2) {
-            nextPanel = 'responsive';
-          } else {
-            nextPanel = selectedPanel + 1;
-          }
-          
-          // Trigger the next panel
-          setFlickeringPanel(nextPanel);
-          
-          // Clear after animation duration and end the sequence
-          setTimeout(() => {
-            setFlickeringPanel(null);
-            isFlickeringRef.current = false; // Sequence is done
-          }, 700);
-        } else {
-          // Just end the sequence
-          setFlickeringPanel(null);
-          isFlickeringRef.current = false; // Sequence is done
-        }
-      }, 700);
-      
-      // Schedule next flicker with longer random delay (5-15 seconds)
-      const nextDelay = 5000 + Math.random() * 4000;
-      setTimeout(triggerRandomFlicker, nextDelay);
-    };
-    
-    // Start the flickering after initial delay
-    const startTimerId = setTimeout(triggerRandomFlicker, initialDelay);
-    
-    return () => {
-      clearTimeout(startTimerId);
-    };
-  }, []);
-  
+<g transform="translate(0, 40)" fill="none" strokeLinecap="round">
+ 
+  <path
+    d="M0 300 Q140 300 300 300 T560 250 T800 260"
+    stroke="#CFE6B5"
+    strokeWidth="50"
+    opacity="1"
+  />
+
+  <path
+    d="M0 255 Q150 200 220 268 T640 262 T800 275"
+    stroke="#A8D080"
+    strokeWidth="40"
+    opacity="1"
+  />
+ 
+  <path
+    d="M0 400 Q180 265 360 282 T720 276 T800 288"
+    stroke="#86AA50"
+    strokeWidth="35"
+    opacity="1"
+  />
+</g>
+
+
+    <path d="M0 270 Q100 210 400 300 T800 300 V400 H0 Z" fill="var(--blue-50)" />
+    <path d="M0 320 Q200 280 400 320 T800 320 V400 H0 Z" fill="var(--color-primary)" />
+    <path d="M0 340 Q200 300 400 340 T800 340 V400 H0 Z" fill="var(--color-primary-600)" />
+  </svg>
+);
+
+
+
+export default function HeroSection() {
   return (
-    <BackgroundImageWrapper pixelated>
-      <section className="hero-section pixel-bg">
-        <div className="hero-panels-row horizontal">
-          {/* Side-by-side panels for all screens */}
-          {panels.map((panel, idx) => (
-            <div
-              key={panel.text}
-              className={`hero-panel side-by-side-panel baseline-fix
-                ${idx === 1 ? 'middle-panel' : ''} 
-                ${idx === 0 ? 'first-panel' : ''}
-                ${idx === panels.length - 1 ? 'last-panel' : ''}
-              `}
-              style={{ zIndex: idx }}
-            >
-              {panel.isMiddle ? (
-                <span
-                  className={`pixel-text flicker flicker-delay-${idx} ${flickeringPanel === idx ? 'random-flicker' : ''} middle-text`}
-                >
-                  {panel.words.map((word, wordIdx) => (
-                    <span key={wordIdx} className="stacked-word">{word}</span>
-                  ))}
-                </span>
-              ) : (
-                <span
-                  className={`pixel-text flicker flicker-delay-${idx} ${flickeringPanel === idx ? 'random-flicker' : ''}`}
-                >
-                  {panel.text}
-                </span>
-              )}
+    <header id="top" className="section hero-wrap wave-edge">
+      <div className="hero-card">
+        <RiverIllustration />
+
+        <div className="hero-grid">
+          <div>
+            <span className="section-eyebrow">Local • San Marcos</span>
+            <h1 className="title-rule" style={{ marginTop: 12 }}>
+              Modernized Smart Coolers for a Better Breakroom
+            </h1>
+            <p className="lead" style={{ marginTop: 12 }}>
+              Snacks and drinks with zero upfront cost. We install, monitor, and restock, so you can focus on your people.
+            </p>
+            <div style={{ display: 'flex', gap: 16, marginTop: 24, flexWrap: 'wrap' }}>
+              <a href="#contact" className="cta-btn">Get a Free Placement</a>
+              <a href="#solutions" className="cta-btn cta-btn--ghost">Our Features</a>
             </div>
-          ))}
-          
-          {/* Fallback for very small screens */}
-          <div className="hero-panel responsive-panel">
-            <span 
-              className={`pixel-text flicker flicker-delay-0 responsive-text ${flickeringPanel === 'responsive' ? 'random-flicker' : ''}`}
-            >
-              <span className="stacked-word">Modern</span>
-              <span className="stacked-word">Smart</span>
-              <span className="stacked-word">Cooler</span>
-              <span className="stacked-word">Amenities</span>
-            </span>
+          </div>
+
+          <div className="hero-art-wrapper">
+            <img src={coolerImg} alt="Smart Cooler in breakroom" className="hero-cooler-img" />
           </div>
         </div>
-      </section>
-    </BackgroundImageWrapper>
+      </div>
+    </header>
   );
 }
-
-export default HeroSection;

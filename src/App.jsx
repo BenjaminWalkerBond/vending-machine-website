@@ -1,7 +1,7 @@
 import NavigationBar from './components/NavigationBar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
-import ServiceAreaSection from './components/ServiceAreaSection';
+import ServicesSection from "./components/ServicesSection";
 import SolutionsSection from './components/SolutionsSection';
 import PartnerSection from './components/PartnerSection';
 import ContactFormSection from './components/ContactFormSection';
@@ -14,8 +14,8 @@ function App() {
       <NavigationBar />
       <HeroSection />
       <AboutSection />
-      {/* <ServiceAreaSection /> */}
       <SolutionsSection />
+      <ServicesSection />
       <PartnerSection />
       <ContactFormSection />
       <FooterSection />

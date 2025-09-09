@@ -1,5 +1,5 @@
 import React from 'react';
-import './BackgroundImageWrapper.css';
+
 
 const BackgroundImageWrapper = ({ children, pixelated }) => (
   <div className={`background-image-wrapper ${pixelated ? 'pixelated' : ''}`}>

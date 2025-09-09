@@ -1,13 +1,22 @@
-/* src/theme.css
-   Theme colors derived from SanMarcosRiver.jpg (river blues, greens, sandy beige, natural tones)
-   Adjust as needed for best visual match. */
+:root{
+  --color-primary:#2573e7; 
+  --color-primary-600:#255db0;
+  --color-coral:#FF8A7A;
+  --color-background:#F7FAFF;
+  --color-surface:#FFFFFF;
+  --color-text:#0E1320;
+  --color-muted:#5B6477;
+  --color-line:#E6EBF4;
+  --ring:#BFD3FF; 
+}
+
+:root{
+  --blue-50:  #EAF2FF;   
+  --blue-100: #D8E7FF;  
+  --coral-50:#FFE7E3;   
+  --sand-50: #FFF7F3; 
+}
+
 :root {
-  --color-primary: #3a7ca5;      /* River blue */
-  --color-secondary: #6ec6ca;    /* Lighter aqua */
-  --color-accent: #b7c59c;       /* Riverbank green */
-  --color-background: #f4f1ee;   /* Sandy beige */
-  --color-surface: #e0e7ef;      /* Light blue-grey */
-  --color-text: #23313b;         /* Deep blue-grey */
-  --color-muted: #7a8b99;        /* Muted blue-grey */
-  --color-highlight: #e6d3b3;    /* Sunlit sand */
+  --color-sun: #ffb773ff;
 }

@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  base: '/vending-machine-website/', // Add base for GitHub Pages
+  plugins: [react(), vanillaExtractPlugin()],
+  base: './', // Add base for GitHub Pages
   server: {
     watch: {
       usePolling: true,
