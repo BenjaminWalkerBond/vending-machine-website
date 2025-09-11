@@ -2,8 +2,8 @@ import { Cog, Sparkles, ShieldCheck, Building2, Signal, TrendingUp } from "lucid
 
 export default function SolutionsSection() {
   const steps = [
-    { n: 1, t: 'Install & Setup', b: 'We deliver and install at no cost, place the cooler where it fits best, and configure payments & SKUs.' },
-    { n: 2, t: 'Stock & Launch',  b: 'Initial stock tailored to your space. We handle ongoing replenishment and temperature alerts.' },
+    { n: 1, t: 'Install & Setup', b: 'We deliver and install at no cost, place the cooler where it fits best, and configure card readers and connectivity.' },
+    { n: 2, t: 'Stock & Launch',  b: 'Initial stock tailored to your space. We handle ongoing replenishment and equipment upkeep.' },
     { n: 3, t: 'Monitor & Optimize', b: '4G live monitoring, sales insights, and product swaps based on what people actually buy.' },
   ];
 
@@ -19,7 +19,7 @@ export default function SolutionsSection() {
  return (
   <section id="solutions" className="section sandbar solutions">
     <h2 className="rule-coral" style={{ marginBottom: 12 }}>The Smart Cooler</h2>
-    <p className="lead">Zero upfront cost. Transparent pricing. We manage everything end-to-end.</p>
+    <p className="lead">Zero cost to the business. Transparent pricing to customers. We manage everything end-to-end.</p>
 
     <div className="solutions-grid">
      

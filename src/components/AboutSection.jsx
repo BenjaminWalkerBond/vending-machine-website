@@ -20,7 +20,7 @@ export default function AboutSection() {
             Locally Owned in San Marcos, TX
           </h2>
           <p className="lead" style={{ marginBottom: 16 }}>
-            Tributary Market brings modernized smart coolers to Central Texas workplaces. They're installed and managed end-to-end with no upfront cost.
+            Tributary Market brings modernized Micro Markets to Central Texas workplaces. They're installed and managed end-to-end with no upfront cost.
           </p>
           <p className="muted">
             Inspired by the San Marcos River, we are clear, dependable, and part of everyday life here. Our service is built the same way: reliable,

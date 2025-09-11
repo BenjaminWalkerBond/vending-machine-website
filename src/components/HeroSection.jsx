@@ -55,10 +55,10 @@ export default function HeroSection() {
           <div>
             <span className="section-eyebrow">Local • San Marcos</span>
             <h1 className="title-rule" style={{ marginTop: 12 }}>
-              Modernized Smart Coolers for a Better Breakroom
+              Modern Micro Markets for Shared Spaces
             </h1>
             <p className="lead" style={{ marginTop: 12 }}>
-              Snacks and drinks with zero upfront cost. We install, monitor, and restock, so you can focus on your people.
+              Snacks, drinks, and commodities at no cost to the business. We install, monitor, and restock, so you can focus on your people.
             </p>
             <div style={{ display: 'flex', gap: 16, marginTop: 24, flexWrap: 'wrap' }}>
               <a href="#contact" className="cta-btn">Get a Free Placement</a>
