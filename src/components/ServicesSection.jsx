@@ -21,7 +21,7 @@ export default function ServicesSection() {
     },
     {
       key: "pico",
-      title: "Compact Pico Cooler",
+      title: "Compact Stockwell Cooler",
       subtitle: "For small spaces",
       bullets: ["Countertop footprint", "Ideal for lobbies & studios", "Plug-and-play"],
       img: compactStockwellImg,
