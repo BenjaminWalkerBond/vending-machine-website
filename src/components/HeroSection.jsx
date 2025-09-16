@@ -67,7 +67,7 @@ export default function HeroSection() {
           </div>
 
           <div className="hero-art-wrapper">
-            <img src={coolerImg} alt="Smart Cooler in breakroom" className="hero-cooler-img" />
+            <img src={coolerImg} alt="Smart Cooler" className="hero-cooler-img" />
           </div>
         </div>
       </div>

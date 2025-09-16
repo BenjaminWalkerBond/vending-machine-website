@@ -111,7 +111,7 @@ export default function ContactFormSection() {
                 <input name="email" type="email" placeholder="Email" required style={fieldStyle}/>
                 <input name="company" placeholder="Company / Property" style={fieldStyle}/>
                 <input name="city" placeholder="City (San Marcos + nearby)" style={fieldStyle}/>
-                <textarea name="message" rows={5} placeholder="Tell us about your breakroom…" style={{...fieldStyle, gridColumn:'1 / -1', resize: 'vertical'}}/>
+                <textarea name="message" rows={5} placeholder="Tell us about your shared space…" style={{...fieldStyle, gridColumn:'1 / -1', resize: 'vertical'}}/>
                 <div style={{gridColumn: '1 / -1', justifySelf: 'start'}}>
                     <button
                         type="submit"
